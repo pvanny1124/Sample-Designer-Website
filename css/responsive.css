@@ -1,0 +1,98 @@
+
+/*media queries*/
+/* @media -> targets digital screens, and joins statements together, if min-width not 480, then won't execute */
+/*if it is, then apply styles*/
+/*660 overrides 480 styles */
+/*480 good for phones*/
+@media screen and (min-width: 480px) {
+
+			/**********************************************************************
+				TWO COLUM LAYOUT
+			***********************************************************************/
+
+			#primary {
+				width: 50%; /* take up half of width of screen */
+				float: left;
+			}
+
+			#secondary {
+				width: 40%;
+				float: right; /*just in case of unexpected browser issues, float left would still work here */
+			}
+			/**********************************************************************
+				MATH TO CALCULATE 3 COLUMS:
+
+				3 * 5 = 15% - > colums * margin per each column = total margin
+				100% - 15% = 85%
+				85% / 3 = 28.3333333333
+				->This width of 28.333333 is OKAY! Don't round down or up! Resist temptation!
+				->numbers like these are common!
+
+			***********************************************************************/
+
+			/**********************************************************************
+				PAGE: PORTFOLIO;
+			***********************************************************************/
+
+			#gallery li {
+				width: 28.3333%; /* 4 decimal spaces ok! */
+			}
+
+			/* for every 4th list item, apply styles in brackets */
+			#gallery li:nth-child(4n) {
+				clear: left; /*clears this item so that floating doesn't effect it so that everything stays intact, captions get bigger and force items to go elsewhere*/
+			}
+
+			/**********************************************************************
+				PAGE: ABOUT;
+			***********************************************************************/
+
+			.profile-photo {
+				float: left; /* to make side by side with text */
+				margin: 0 5% 80px 0; /*spacing */
+			}
+
+}
+
+/*660 good for tablets, larger screens*/
+@media screen and (min-width: 660px) {
+	
+	/**********************************************************************
+		HEADER
+	***********************************************************************/
+
+	nav {
+		background: none; /* so that the text can sit against the header background */
+		float: right;
+		font-size: 1.125em;
+		margin-right: 5%;
+		text-align: right; 
+		width: 45%;
+	}
+
+	#logo {
+		float: left;
+		text-align: left;
+		margin-left: 5%;
+		width: 45%;
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 0.825em;
+		margin-bottom: 20px;
+	}
+
+	header {
+		border-bottom: 5px solid #599a68;
+		/* same as -> border-style: solid;
+		border-color: #599a68;*/
+		margin-bottom: 60px; /* separates content and header */
+	}
+
+
+	
+}
